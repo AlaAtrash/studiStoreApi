@@ -1,0 +1,30 @@
+version: '2'
+services:
+  webstore:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "4000:3000"
+    depends_on:
+      - postgresstore
+    working_dir: /app
+    environment:
+      - DB_NAME=storeapp
+      - DB_USER=store
+      - DB_PW=store
+      - DB_HOST=postgresstore
+      - DB_PORT=5432
+      - DB_SCHAME=public
+
+
+  postgresstore:
+    image: postgres:9.3
+    container_name: postgresqlstore
+    environment:
+      POSTGRES_USER: store
+      POSTGRES_PASSWORD: store
+      POSTGRES_DB: storeapp
+    ports:
+      - 5432:5432
