@@ -13,11 +13,11 @@ export class ProductsController {
     return await this.productsService.find(null)
   }
 
-  @Get('/name/:name')
-  async getProductsByName(@Param('name') name:string) : Promise<any> {
+  @Get('/id/:id')
+  async getProductsByName(@Param('id') id:string) : Promise<any> {
     const options = {
       where: {
-        name,
+        id,
       }
     }
     return await this.productsService.find(options)
