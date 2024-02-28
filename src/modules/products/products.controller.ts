@@ -2,7 +2,6 @@ import { Get, Query, Header, Controller, Post, Body, Res, HttpStatus, Param, Log
 import { ProductsService } from './products.service';
 import { products } from './products.list';
 import {ProductsDto} from './products.dto'
-import { Response } from 'express';
 
 
 @Controller('products')

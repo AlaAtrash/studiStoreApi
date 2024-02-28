@@ -2,12 +2,12 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  host: process.env.DB_HOST,
-  port: parseInt(process.env.DB_PORT),
-  username: process.env.DB_USER,
-  password: process.env.DB_PW,
-  database: process.env.DB_NAME,
-  schema: process.env.DB_SCHAME,
+  host: process.env.DB_HOST || 'localhost',
+  port: parseInt(process.env.DB_PORT) || 5432,
+  username: process.env.DB_USER || 'admin',
+  password: process.env.DB_PW || 'admin',
+  database: process.env.DB_NAME || 'studistore',
+  schema: process.env.DB_SCHAME || 'public',
   autoLoadEntities: false,
   migrationsTableName: 'migrations',
   migrations: ['dist/migrations/*.js'],
