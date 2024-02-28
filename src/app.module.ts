@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/typeorm.config'
 import { ProductsModule } from './modules/products/products.module'
 
-
+//main module
 @Module({
   imports: [TypeOrmModule.forRoot(typeOrmConfig), ProductsModule],
   controllers: [AppController],
