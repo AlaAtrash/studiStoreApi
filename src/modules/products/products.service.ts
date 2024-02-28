@@ -12,6 +12,7 @@ export class ProductsService {
         return result
     }
 
+    // security issue here
     async save(productsDto: ProductsDto[]): Promise<any> {
         const productsEntity = []
         for(let productsDtoObj of productsDto) {
